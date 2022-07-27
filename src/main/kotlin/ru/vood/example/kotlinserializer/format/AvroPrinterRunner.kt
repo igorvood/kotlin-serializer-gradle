@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service
 class AvroPrinterRunner : CommandLineRunner {
 
     override fun run(vararg args: String?) {
-        val schema: Schema = Avro.default.schema(UaspDto.serializer())
-        println(schema.toString(true))
+        val schemaUaspDto: Schema = Avro.default.schema(UaspDto.serializer())
+        val schemaUaspDtoCuttten: Schema = Avro.default.schema(UaspDtoCuttten.serializer())
+        println(schemaUaspDtoCuttten.toString(true))
+
+        println(schemaUaspDto.toString(true))
     }
 }

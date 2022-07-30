@@ -25,21 +25,10 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-serialization")
     implementation("com.github.avro-kotlin.avro4k:avro4k-core:1.6.0")
 
-//    <dependency>
-//    <groupId>org.jetbrains.kotlin</groupId>
-//    <artifactId>kotlin-serialization</artifactId>
-//    <version>${kotlin.version}</version>
-//    </dependency>
-//    <dependency>
-//    <groupId>com.github.avro-kotlin.avro4k</groupId>
-//    <artifactId>avro4k-core</artifactId>
-//    <version>1.6.0</version>
-//    </dependency>
-
-
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
 }
 
 tasks.withType<KotlinCompile> {

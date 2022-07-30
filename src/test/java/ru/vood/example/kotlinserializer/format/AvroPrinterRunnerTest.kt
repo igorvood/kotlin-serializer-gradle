@@ -14,9 +14,17 @@ class AvroPrinterRunnerTest {
         val encodeToByteArray = Avro.default.encodeToByteArray(serializer, obj)
 
         val decodeFromByteArray = Avro.default.decodeFromByteArray(serializer, encodeToByteArray)
-
-
         Assertions.assertEquals(obj,decodeFromByteArray )
+
+        val decodeFromByteArrayCuttten = Avro.default.decodeFromByteArray(UaspDtoCuttten.serializer(), encodeToByteArray)
+
+
+        Assertions.assertEquals(obj.id,decodeFromByteArrayCuttten.id )
+        Assertions.assertEquals(obj.dataDouble,decodeFromByteArrayCuttten.dataDouble )
+        Assertions.assertEquals(obj.dataString,decodeFromByteArrayCuttten.dataString )
+
+
+
 
 
     }

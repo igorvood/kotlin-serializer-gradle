@@ -7,6 +7,7 @@ import org.apache.avro.Schema
 import org.springframework.boot.CommandLineRunner
 import org.springframework.stereotype.Service
 import java.io.File
+import java.math.BigDecimal
 
 @Service
 class AvroPrinterRunner : CommandLineRunner {
@@ -23,8 +24,19 @@ class AvroPrinterRunner : CommandLineRunner {
 
     fun asdasd(){
 
-        val schema = Avro.default.schema(UaspDto.serializer())
+        val serializer = UaspDto.serializer()
+        val schema = Avro.default.schema(serializer)
 
-        val os = AvroOutputStream.binary(schema, UaspDto.serializer()).to(File("pizzas.avro"))
+        val obj = UaspDto( "id1",
+            mapOf("1" to "one"),
+            mapOf<String, Double>(),
+            BigDecimal(12)
+        )
+        val encodeToByteArray = Avro.default.encodeToByteArray(serializer, obj)
+
+
+        val r = Avro.default.toRecord(serializer, obj)
+
+
     }
 }

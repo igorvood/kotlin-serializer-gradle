@@ -39,6 +39,7 @@ dependencies {
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.0")
 }
 
 tasks.withType<KotlinCompile> {

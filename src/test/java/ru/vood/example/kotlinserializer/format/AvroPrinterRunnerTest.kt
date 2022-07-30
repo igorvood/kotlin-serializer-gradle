@@ -23,10 +23,6 @@ class AvroPrinterRunnerTest {
         Assertions.assertEquals(obj.dataDouble,decodeFromByteArrayCuttten.dataDouble )
         Assertions.assertEquals(obj.dataString,decodeFromByteArrayCuttten.dataString )
 
-
-
-
-
     }
 
 
